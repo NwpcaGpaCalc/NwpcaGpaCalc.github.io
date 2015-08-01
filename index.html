@@ -120,8 +120,7 @@ ddsmoothmenu.init({
             type: "GET",                          
             data: "grade1="+$("#grade1").val()+"&grade2="+$("#grade2").val()+"&grade3="+$("#grade3").val()+"&grade4="+$("#grade4").val()+"&grade5="+$("#grade5").val()+"&grade6="+$("#grade6").val()+"&grade7="+$("#grade7").val()+"&grade8="+$("#grade8").val()+"&grade9="+$("#grade9").val()+"&grade10="+$("#grade10").val()+"&grade11="+$("#grade11").val()+"&grade12="+$("#grade12").val()+"&grade13="+$("#grade13").val()+"&grade14="+$("#grade14").val()+"&grade15="+$("#grade15").val()+"&level1="+$("#level1").val()+"&level2="+$("#level2").val()+"&level3="+$("#level3").val()+"&level4="+$("#level4").val()+"&level5="+$("#level5").val()+"&level6="+$("#level6").val()+"&level7="+$("#level7").val()+"&level8="+$("#level8").val()+"&level9="+$("#level9").val()+"&level10="+$("#level10").val()+"&level11="+$("#level11").val()+"&level12="+$("#level12").val()+"&level13="+$("#level13").val()+"&level14="+$("#level14").val()+"&level15="+$("#level15").val()+"&credit1="+$("#credit1").val()+"&credit2="+$("#credit2").val()+"&credit3="+$("#credit3").val()+"&credit4="+$("#credit4").val()+"&credit5="+$("#credit5").val()+"&credit6="+$("#credit6").val()+"&credit7="+$("#credit7").val()+"&credit="+$("#credit8").val()+"&credit9="+$("#credit9").val()+"&credit10="+$("#credit10").val()+"&credit11="+$("#credit11").val()+"&credit12="+$("#credit12").val()+"&credit13="+$("#credit13").val()+"&credit14="+$("#credit14").val()+"&credit15="+$("#credit15").val(),
             success: function(data) {
-                //var dat = $.parseJSON(data);
-                alert(data);
+                $("#gpaResult").val($.parseJSON(data)['gpa']);
             },
         });
     }
@@ -240,7 +239,7 @@ ddsmoothmenu.init({
     </table>
     <br />
     
-    <font id='gpaResult' style='font-size:32px;' face='Courier New'>Your GPA is: <?php echo $final_gpa; ?> </font>
+    <font id='gpaResult' style='font-size:32px;' face='Courier New'>Your GPA is: </font>
         
         
         <br/>
