@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<!--NOTE: I USED I CSS TEMPLATE TO MAKE MY WEBSITE ALL CREDIT FOR CSS AND JAVASCRIPT GOES TO: http://www.templatemo.com -->
+<!--However, all PHP coding and html has been done by me -->
+<?php
+error_reporting(0);
+?>
+<html>
+  <head>
+    <title>NPCA GPA Calculator | Krishnan Rajiyah</title>
+   <meta name="keywords" content="Krishnan Rajiyah GPACalc GPA Calculator Collegiate Academy" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/templatemo_style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/templatemo_misc.css">
+
+    <link rel="icon" 
+      type="image/png" 
+      href="images/npca.png">
+
+    <link href="css/circle.css" rel="stylesheet">
+    <link href="css/jquery.bxslider.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/nivo-slider.css">
+    <link rel="stylesheet" href="css/slimbox2.css" type="text/css" media="screen" />
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,600' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/JavaScript" src="/js/slimbox2.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="/https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/ddsmoothmenu.js"></script>
+
+<script type="text/javascript">
+
+function resetForm() {  
+    document.getElementById("grade1").value = "";
+    document.getElementById("grade2").value = "";
+    document.getElementById("grade3").value = "";
+    document.getElementById("grade4").value = "";
+    document.getElementById("grade5").value = "";
+    document.getElementById("grade6").value = "";
+    document.getElementById("grade7").value = "";
+    document.getElementById("grade8").value = "";
+    document.getElementById("grade9").value = "";
+    document.getElementById("grade10").value = "";
+    document.getElementById("grade11").value = "";
+    document.getElementById("grade12").value = "";
+    document.getElementById("grade13").value = "";
+    document.getElementById("grade14").value = "";
+    document.getElementById("grade15").value = "";
+
+    document.getElementById("credit1").value = "";
+    document.getElementById("credit2").value = "";
+    document.getElementById("credit3").value = "";
+    document.getElementById("credit4").value = "";
+    document.getElementById("credit5").value = "";
+    document.getElementById("credit6").value = "";
+    document.getElementById("credit7").value = "";
+    document.getElementById("credit8").value = "";
+    document.getElementById("credit9").value = "";
+    document.getElementById("credit10").value = "";
+    document.getElementById("credit11").value = "";
+    document.getElementById("credit12").value = "";
+    document.getElementById("credit13").value = "";
+    document.getElementById("credit14").value = "";
+    document.getElementById("credit15").value = "";
+
+    document.getElementById("level1").value = "";
+    document.getElementById("level2").value = "";
+    document.getElementById("level3").value = "";
+    document.getElementById("level4").value = "";
+    document.getElementById("level5").value = "";
+    document.getElementById("level6").value = "";
+    document.getElementById("level7").value = "";
+    document.getElementById("level8").value = "";
+    document.getElementById("level9").value = "";
+    document.getElementById("level10").value = "";
+    document.getElementById("level11").value = "";
+    document.getElementById("level12").value = "";
+    document.getElementById("level13").value = "";
+    document.getElementById("level14").value = "";
+    document.getElementById("level15").value = ""; 
+
+    document.getElementById("gpaResult").innerText = ""; 
+
+    window.location.href="http://npcagpacalc.comeze.com";
+}
+
+ddsmoothmenu.init({
+    mainmenuid: "templatemo_flicker", //menu DIV id
+    orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+    classname: 'ddsmoothmenu', //class added to menu's outer DIV
+    //customtheme: ["#1c5a80", "#18374a"],
+    contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+</script>
+
+  </head>
+  <body>    
+    <!--Contact Start -->    
+    <div class="templatemo_lightgrey" id="templatemo_contact">    
+        <div class="templatemo_paracenter">
+        <img src="images/npca.png" class="collegiateLogo">
+        <h2>Collegiate Academy GPA Calculator</h2>
+        <p>~ Created By <a href="http://krajiyah.github.io" target="_blank">Krishnan Rajiyah</a> ~</p>
+        </div>
+        <div class="clear"></div>                   
+            <div class="clear"></div>
+           <br />            
+<div align="center">
+        <!-- Begin PHP for calc-->
+
+        <?php 
+$grade1 = (float)$_GET['grade1'];
+$grade2 = (float)$_GET['grade2'];
+$grade3 = (float)$_GET['grade3'];
+$grade4 = (float)$_GET['grade4'];
+$grade5 = (float)$_GET['grade5'];
+$grade6 = (float)$_GET['grade6'];
+$grade7 = (float)$_GET['grade7'];
+$grade8 = (float)$_GET['grade8'];
+$grade9 = (float)$_GET['grade9'];
+$grade10 = (float)$_GET['grade10'];
+$grade11 = (float)$_GET['grade11'];
+$grade12 = (float)$_GET['grade12'];
+$grade13 = (float)$_GET['grade13'];
+$grade14 = (float)$_GET['grade14'];
+$grade15 = (float)$_GET['grade15'];
+$credit1 = (float)$_GET['credit1'];
+$credit2 = (float)$_GET['credit2'];
+$credit3 = (float)$_GET['credit3'];
+$credit4 = (float)$_GET['credit4'];
+$credit5 = (float)$_GET['credit5'];
+$credit6 = (float)$_GET['credit6'];
+$credit7 = (float)$_GET['credit7'];
+$credit8 = (float)$_GET['credit8'];
+$credit9 = (float)$_GET['credit9'];
+$credit10 = (float)$_GET['credit10'];
+$credit11 = (float)$_GET['credit11'];
+$credit12 = (float)$_GET['credit12'];
+$credit13 = (float)$_GET['credit13'];
+$credit14 = (float)$_GET['credit14'];
+$credit15 = (float)$_GET['credit15'];
+$level1 = $_GET['level1'];
+$level2 = $_GET['level2'];
+$level3 = $_GET['level3'];
+$level4 = $_GET['level4'];
+$level5 = $_GET['level5'];
+$level6 = $_GET['level6'];
+$level7 = $_GET['level7'];
+$level8 = $_GET['level8'];
+$level9 = $_GET['level9'];
+$level10 = $_GET['level10'];
+$level11 = $_GET['level11'];
+$level12 = $_GET['level12'];
+$level13 = $_GET['level13'];
+$level14 = $_GET['level14'];
+$level15 = $_GET['level15'];
+$gpa1 = (float)0; $gpa2 = (float)0;
+$gpa3 = (float)0; $gpa4 = (float)0;
+$gpa5 = (float)0; $gpa6 = (float)0;
+$gpa7 = (float)0; $gpa8 = (float)0;
+$gpa9 = (float)0; $gpa10 = (float)0;
+$gpa11 = (float)0; $gpa12 = (float)0;
+$gpa13 = (float)0; $gpa14 = (float)0;
+$gpa15 = (float)0;
+function getGpa($level, $grade, $credit)
+{
+    $grade = (float)$grade;
+    $credit = (float)$credit;
+    $gpa = (float) 0.0;
+    if($level == "H" || $level == "h" || $level == "honors" || $level == "Honors")
+{
+    if($grade >= 97)
+    {
+        $gpa = 4.5*$credit;
+    }
+    else if ($grade >= 93 && $grade <= 96)
+    {
+        $gpa = 4.0 * $credit;
+    }
+    else if ($grade >= 89 && $grade <= 92)
+    {
+        $gpa = 3.5 * $credit;
+    }
+    else if ($grade >= 85 && $grade <= 88)
+    {
+        $gpa = 3.0 * $credit;
+    }
+    else if ($grade >= 76 && $grade <= 84)
+    {
+        $gpa = 2.5 * $credit;
+    }
+    else if ($grade >= 70 && $grade <= 75)
+    {
+        $gpa = 2.0 * $credit;
+    }
+    else if ($grade >= 0 && $grade <= 69)
+    {
+        $gpa = 0 * $credit;
+    } 
+}
+else if ($level == "AP" || $level == "ap" || $level == "Ap" || $level == "aP" || $level == "Advanced Placement" || $level == "advanced placement" || 
+$level == "Advanced placement")
+        {
+            if ($grade >= 97)
+            {
+                $gpa = 5.5 * $credit;
+            }
+            else if ($grade >= 93 && $grade <= 96)
+            {
+                $gpa = 5.0 * $credit;
+            }
+            else if ($grade >= 89 && $grade <= 92)
+            {
+                $gpa = 4.5 * $credit;
+            }
+            else if ($grade >= 85 && $grade <= 88)
+            {
+                $gpa = 4.0 * $credit;
+            }
+            else if ($grade >= 76 && $grade <= 84)
+            {
+                $gpa = 3.5 * $credit;
+            }
+            else if ($grade >= 70 && $grade <= 75)
+            {
+                $gpa = 3.0 * $credit;
+            }
+            else if ($grade >= 0 && $grade <= 69)
+            {
+                $gpa = 0 * $credit;
+            }            
+        } 
+    return (float) $gpa;
+}  
+$gpa1 = (float)getGpa($level1, $grade1, $credit1); 
+$gpa2 = (float)getGpa($level2, $grade2, $credit2);
+$gpa3 = (float)getGpa($level3, $grade3, $credit3);
+$gpa4 = (float)getGpa($level4, $grade4, $credit4);
+$gpa5 = (float)getGpa($level5, $grade5, $credit5);
+$gpa6 = (float)getGpa($level6, $grade6, $credit6);
+$gpa7 = (float)getGpa($level7, $grade7, $credit7);
+$gpa8 = (float)getGpa($level8, $grade8, $credit8);  
+$gpa9 = (float)getGpa($level9, $grade9, $credit9); 
+$gpa10 = (float)getGpa($level10, $grade10, $credit10); 
+$gpa11 = (float)getGpa($level11, $grade11, $credit11); 
+$gpa12 = (float)getGpa($level12, $grade12, $credit12); 
+$gpa13 = (float)getGpa($level13, $grade13, $credit13); 
+$gpa14 = (float)getGpa($level14, $grade14, $credit14); 
+$gpa15 = (float)getGpa($level15, $grade15, $credit15); 
+$gpa_sum = (float)($gpa1+$gpa2+$gpa3+$gpa4+$gpa5+$gpa6+$gpa7+$gpa8+$gpa9+$gpa10+$gpa11+$gpa12+$gpa13+$gpa14+$gpa15);
+$credit_sum = (float)($credit1+$credit2+$credit3+$credit4+$credit5+$credit6+$credit7+$credit8+$credit9+$credit10+$credit11+$credit12+$credit13+$credit14+$credit15);
+$final_gpa = (float)((float)($gpa_sum)/(float)($credit_sum)); 
+?>
+        <!-- End PHP for calc--> 
+        
+
+        <!-- Begin GPA Calc -->
+        <form action="index.php" method="get" enctype="multipart/form-data" id="calcForm">   
+    
+    
+    <table id="background-image" summary="Meeting Results">
+    <thead>
+        <tr>
+            <th scope="col"> </th>
+            <th scope="col">Grade(%)</th>
+            <th scope="col">Credit(0,.5,1)</th>
+            <th scope="col">Level(H,AP)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Class 1</td>
+            <td><input type="text" name="grade1" id="grade1" value="<?php echo $_GET['grade1']; ?>" size="22" /></td>
+            <td><input type="text" name="credit1" id="credit1" value="<?php echo $_GET['credit1']; ?>" size="22" /></td>
+            <td><input type="text" name="level1" id="level1" value="<?php echo $_GET['level1']; ?>" size="22" /></td>
+        </tr>
+        <tr>
+            <td>Class 2</td>
+            <td><input type="text" name="grade2" id="grade2" value="<?php echo $_GET['grade2']; ?>" size="22" /></td>
+            <td><input type="text" name="credit2" id="credit2" value="<?php echo $_GET['credit2']; ?>" size="22" /></td>
+            <td><input type="text" name="level2" id="level2" value="<?php echo $_GET['level2']; ?>" size="22" /></td>
+        </tr>
+        <tr>
+            <td>Class 3</td>
+            <td><input type="text" name="grade3" id="grade3" value="<?php echo $_GET['grade3']; ?>" size="22" /></td>
+            <td><input type="text" name="credit3" id="credit3" value="<?php echo $_GET['credit3']; ?>" size="22" /></td>
+            <td><input type="text" name="level3" id="level3" value="<?php echo $_GET['level3']; ?>" size="22" /></td>
+        </tr>
+        <tr>
+            <td>Class 4</td>
+            <td><input type="text" name="grade4" id="grade4" value="<?php echo $_GET['grade4']; ?>" size="22" /></td>
+            <td><input type="text" name="credit4" id="credit4" value="<?php echo $_GET['credit4']; ?>" size="22" /></td>
+            <td><input type="text" name="level4" id="level4" value="<?php echo $_GET['level4']; ?>" size="22" /></td>
+        </tr>
+        <tr>
+            <td>Class 5</td>
+            <td><input type="text" name="grade5" id="grade5" value="<?php echo $_GET['grade5']; ?>" size="22" /></td>
+            <td><input type="text" name="credit5" id="credit5" value="<?php echo $_GET['credit5']; ?>" size="22" /></td>
+            <td><input type="text" name="level5" id="level5" value="<?php echo $_GET['level5']; ?>" size="22" /></td>
+        </tr>
+        <tr>
+            <td>Class 6</td>
+            <td><input type="text" name="grade6" id="grade6" value="<?php echo $_GET['grade6']; ?>" size="22" /></td>
+            <td><input type="text" name="credit6" id="credit6" value="<?php echo $_GET['credit6']; ?>" size="22" /></td>
+            <td><input type="text" name="level6" id="level6" value="<?php echo $_GET['level6']; ?>" size="22" /></td>
+        </tr>
+        <tr>
+            <td>Class 7</td>
+            <td><input type="text" name="grade7" id="grade7" value="<?php echo $_GET['grade7']; ?>" size="22" /></td>
+            <td><input type="text" name="credit7" id="credit7" value="<?php echo $_GET['credit7']; ?>" size="22" /></td>
+            <td><input type="text" name="level7" id="level7" value="<?php echo $_GET['level7']; ?>" size="22" /></td>
+        </tr>
+        <tr>
+            <td>Class 8</td>
+            <td><input type="text" name="grade8" id="grade8" value="<?php echo $_GET['grade8']; ?>" size="22" /></td>
+            <td><input type="text" name="credit8" id="credit8" value="<?php echo $_GET['credit8']; ?>" size="22" /></td>
+            <td><input type="text" name="level8" id="level8" value="<?php echo $_GET['level8']; ?>" size="22" /></td>
+        </tr>
+        <tr>
+            <td>Class 9</td>
+            <td><input type="text" name="grade9" id="grade9" value="<?php echo $_GET['grade9']; ?>" size="22" /></td>
+            <td><input type="text" name="credit9" id="credit9" value="<?php echo $_GET['credit9']; ?>" size="22" /></td>
+            <td><input type="text" name="level9" id="level9" value="<?php echo $_GET['level9']; ?>" size="22" /></td>
+        </tr>
+        <tr>
+            <td>Class 10</td>
+            <td><input type="text" name="grade10" id="grade10" value="<?php echo $_GET['grade10']; ?>" size="22" /></td>
+            <td><input type="text" name="credit10" id="credit10" value="<?php echo $_GET['credit10']; ?>" size="22" /></td>
+            <td><input type="text" name="level10" id="level10" value="<?php echo $_GET['level10']; ?>" size="22" /></td>
+        </tr>
+        <tr>
+            <td>Class 11</td>
+            <td><input type="text" name="grade11" id="grade11" value="<?php echo $_GET['grade11']; ?>" size="22" /></td>
+            <td><input type="text" name="credit11" id="credit11" value="<?php echo $_GET['credit11']; ?>" size="22" /></td>
+            <td><input type="text" name="level11" id="level11" value="<?php echo $_GET['level11']; ?>" size="22" /></td>
+        </tr>
+        <tr>
+            <td>Class 12</td>
+            <td><input type="text" name="grade12" id="grade12" value="<?php echo $_GET['grade12']; ?>" size="22" /></td>
+            <td><input type="text" name="credit12" id="credit12" value="<?php echo $_GET['credit12']; ?>" size="22" /></td>
+            <td><input type="text" name="level12" id="level12" value="<?php echo $_GET['level12']; ?>" size="22" /></td>
+        </tr>
+        <tr>
+            <td>Class 13</td>
+            <td><input type="text" name="grade13" id="grade13" value="<?php echo $_GET['grade13']; ?>" size="22" /></td>
+            <td><input type="text" name="credit13" id="credit13" value="<?php echo $_GET['credit13']; ?>" size="22" /></td>
+            <td><input type="text" name="level13" id="level13" value="<?php echo $_GET['level13']; ?>" size="22" /></td>
+        </tr>
+        <tr>
+            <td>Class 14</td>
+            <td><input type="text" name="grade14" id="grade14" value="<?php echo $_GET['grade14']; ?>" size="22" /></td>
+            <td><input type="text" name="credit14" id="credit14" value="<?php echo $_GET['credit14']; ?>" size="22" /></td>
+            <td><input type="text" name="level14" id="level14" value="<?php echo $_GET['level14']; ?>" size="22" /></td>
+        </tr>
+        <tr>
+            <td>Class 15</td>
+            <td><input type="text" name="grade15" id="grade15" value="<?php echo $_GET['grade15']; ?>" size="22" /></td>
+            <td><input type="text" name="credit15" id="credit15" value="<?php echo $_GET['credit15']; ?>" size="22" /></td>
+            <td><input type="text" name="level15" id="level15" value="<?php echo $_GET['level15']; ?>" size="22" /></td>
+        </tr>
+    </tbody>
+    </table>
+    <br />
+    <input name="submit" type="submit" id="submit" value="Calculate"/>
+    <input name="clear" type="button" id="clear" value="Reset" onclick="resetForm()" />
+    </form>
+    </table>
+    <br />
+    
+    <font id='gpaResult' style='font-size:32px;' face='Courier New'>Your GPA is: <?php echo $final_gpa; ?> </font>
+        
+        
+        <br/>
+        <br/>
+        <br/>
+        <ul style="list-style-type: none;">
+        <li>H = Honors</li>
+        <li>AP = Advanced Placement</li>
+        <li> Enter AP level for dual enrollment clases too, since both are on 5.5 scale. </li>
+        <li> If you do not have 15 classes, then only fill in the classes you have. </li>
+        <li> If you have a free period or class with no grade involved, then leave them empty. </li>
+        </ul>
+        <!-- End GPA Calc -->
+
+        </div>        
+        </div>                       
+  <!-- Contact End -->
+    
+    <!--Footer Start-->
+    <div class="templatemo_footer">
+        <div class="container">
+          <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12">
+                <h2><a href="" title="mejores fondos de pantalla"  class="footer_like" target="_blank">About</a> Me</h2>                
+
+              <p>Hi! My name is Krishnan Rajiyah. I have developed this website.</p> 
+
+              <p>I am a freshman at University of California Berkeley that studies Computer Science. I enjoy making programs that help people accomplish things efficiently. </p>
+
+          </div>
+            <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12">
+                <h2>My Projects</h2>
+                <ul> 
+        
+                  <li><a href="http://npcagpacalc.comeze.com/">Collegiate Academy GPA Calculator</a></li>     
+
+                  <li><a href="http://showcase.no-ip.org/" target="_blank">Showcase</a></li>
+                </ul>
+                <div class="clear"></div>                
+            </div>            
+          <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12">
+              <h2>Credentials</h2>
+                <ul>
+                  <li><a href="http://www.linkedin.com/in/krishnanrajiyah" target="_blank">LinkedIn</a></li>   
+                  <li><a href="https://github.com/Krajiyah" target="_blank">GitHub</a></li>               
+                </ul>
+                <div class="clear"></div>                
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12">
+            <h2>Contact</h2>
+                <span class="left col-xs-1 fa fa-map-marker"></span>
+                <span class="right col-xs-11">Erie, PA</span>
+                <div class="clear height10"></div>
+                <span class="left col-xs-1 fa fa-envelope"></span>
+                <span class="right col-xs-11">krajiyah@gmail.com</span>
+                <div class="clear height10"></div>
+                <span class="left col-xs-1 fa fa-globe"></span>
+                <span class="right col-xs-11"><a href="http://krajiyah.github.io/" target="_blank">krajiyah.github.io</a></span>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+   <!--Footer End-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- <script src="/https://code.jquery.com/jquery.js"></script> -->
+    <script src="/js/jquery-1.10.2.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.cycle2.min.js"></script>
+    <script src="/js/jquery.cycle2.carousel.min.js"></script>
+    <script src="/js/jquery.nivo.slider.pack.js"></script>
+    <script>$.fn.cycle.defaults.autoSelector = '.slideshow';</script>
+    <script type="text/javascript">
+      $(function(){
+          var default_view = 'grid';
+          if($.cookie('view') !== 'undefined'){
+              $.cookie('view', default_view, { expires: 7, path: '/' });
+          }
+          function get_grid(){
+              $('.list').removeClass('list-active');
+              $('.grid').addClass('grid-active');
+              $('.prod-cnt').animate({opacity:0},function(){
+                  $('.prod-cnt').removeClass('dbox-list');
+                  $('.prod-cnt').addClass('dbox');
+                  $('.prod-cnt').stop().animate({opacity:1});
+              });
+          }
+          function get_list(){
+              $('.grid').removeClass('grid-active');
+              $('.list').addClass('list-active');
+              $('.prod-cnt').animate({opacity:0},function(){
+                  $('.prod-cnt').removeClass('dbox');
+                  $('.prod-cnt').addClass('dbox-list');
+                  $('.prod-cnt').stop().animate({opacity:1});
+              });
+          }
+          if($.cookie('view') == 'list'){
+              $('.grid').removeClass('grid-active');
+              $('.list').addClass('list-active');
+              $('.prod-cnt').animate({opacity:0});
+              $('.prod-cnt').removeClass('dbox');
+              $('.prod-cnt').addClass('dbox-list');
+              $('.prod-cnt').stop().animate({opacity:1});
+          }
+
+          if($.cookie('view') == 'grid'){
+              $('.list').removeClass('list-active');
+              $('.grid').addClass('grid-active');
+              $('.prod-cnt').animate({opacity:0});
+                  $('.prod-cnt').removeClass('dboxlist');
+                  $('.prod-cnt').addClass('dbox');
+                  $('.prod-cnt').stop().animate({opacity:1});
+          }
+
+          $('#list').click(function(){
+              $.cookie('view', 'list');
+              get_list()
+          });
+
+          $('#grid').click(function(){
+              $.cookie('view', 'grid');
+              get_grid();
+          });
+
+          /* filter */
+          $('.menuSwitch ul li').click(function(){
+              var CategoryID = $(this).attr('category');
+              $('.menuSwitch ul li').removeClass('cat-active');
+              $(this).addClass('cat-active');
+
+              $('.prod-cnt').each(function(){
+                  if(($(this).hasClass(CategoryID)) == false){
+                     $(this).css({'display':'none'});
+                  };
+              });
+              $('.'+CategoryID).fadeIn();
+
+          });
+      });
+    </script>
+    <script src="/js/jquery.singlePageNav.js"></script>
+
+    <script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider({
+          prevText: '',
+          nextText: '',
+          controlNav: false,
+        });
+    });
+    </script>
+    <script>
+      $(document).ready(function(){
+
+        // hide #back-top first
+        $("#back-top").hide();
+
+        // fade in #back-top
+        $(function () {
+          $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+              $('#back-top').fadeIn();
+            } else {
+              $('#back-top').fadeOut();
+            }
+          });
+
+          // scroll body to 0px on click
+          $('#back-top a').click(function () {
+            $('body,html').animate({
+              scrollTop: 0
+            }, 800);
+            return false;
+          });
+        });
+
+      });
+      </script>
+      <script type="text/javascript">
+      <!--
+          function toggle_visibility(id) {
+             var e = document.getElementById(id);
+             if(e.style.display == 'block'){
+                e.style.display = 'none';
+                $('#togg').text('show footer');
+            }
+             else {
+                e.style.display = 'block';
+                $('#togg').text('hide footer');
+            }
+          }
+      //-->
+      </script>
+      <script type="text/javascript" src="/js/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+      <script type="text/javascript">
+      $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html,body').animate({
+                scrollTop: target.offset().top
+              }, 1000);
+              return false;
+            }
+          }
+        });
+      });
+      </script>
+      <script src="/js/stickUp.min.js" type="text/javascript"></script>
+      <script type="text/javascript">
+        //initiating jQuery
+        jQuery(function($) {
+          $(document).ready( function() {
+            //enabling stickUp on the '.navbar-wrapper' class
+            $('.mWrapper').stickUp();
+          });
+        });
+      </script>
+      <script>
+     $('a.menu').click(function(){
+    $('a.menu').removeClass("active");
+    $(this).addClass("active");
+    });
+      </script>
+
+      <script> <!-- scroll to specific id when click on menu -->
+         // Cache selectors
+var lastId,
+    topMenu = $("#top-menu"),
+    topMenuHeight = topMenu.outerHeight()+15,
+    // All list items
+    menuItems = topMenu.find("a"),
+    // Anchors corresponding to menu items
+    scrollItems = menuItems.map(function(){
+      var item = $($(this).attr("href"));
+      if (item.length) { return item; }
+    });
+
+// Bind click handler to menu items
+// so we can get a fancy scroll animation
+menuItems.click(function(e){
+  var href = $(this).attr("href"),
+      offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+  $('html, body').stop().animate({
+      scrollTop: offsetTop
+  }, 300);
+  e.preventDefault();
+});
+
+// Bind to scroll
+$(window).scroll(function(){
+   // Get container scroll position
+   var fromTop = $(this).scrollTop()+topMenuHeight;
+
+   // Get id of current scroll item
+   var cur = scrollItems.map(function(){
+     if ($(this).offset().top < fromTop)
+       return this;
+   });
+   // Get the id of the current element
+   cur = cur[cur.length-1];
+   var id = cur && cur.length ? cur[0].id : "";
+
+   if (lastId !== id) {
+       lastId = id;
+       // Set/remove active class
+       menuItems
+         .parent().removeClass("active")
+         .end().filter("[href=#"+id+"]").parent().addClass("active");
+   }
+});
+      </script>
+<script type='text/javascript' src='js/logging.js'></script>
+</body>
+</html>
