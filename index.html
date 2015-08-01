@@ -119,8 +119,8 @@ ddsmoothmenu.init({
         type: "GET",                          
         data: "",
         contentType: "text/plain",
-        xhrFields: {
-            withCredentials: false
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest'
         },
         success: function(data) {
             alert("yes!");
