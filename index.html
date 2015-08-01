@@ -118,6 +118,10 @@ ddsmoothmenu.init({
         url: "http://krajiyah.net63.net/PHP/gpacalc.php",
         type: "GET",                          
         data: "",
+        contentType: "text/plain",
+        xhrFields: {
+            withCredentials: false
+        },
         success: function(data) {
             alert("yes!");
         },
