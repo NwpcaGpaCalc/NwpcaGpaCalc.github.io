@@ -119,12 +119,15 @@ ddsmoothmenu.init({
         type: "GET",                          
         data: "",
         contentType: "text/plain",
+        xhrFields: {
+            withCredentials: false
+        },
         success: function(data) {
             alert("yes!");
         },
     }); 
-    $("#grade1").val('test1');
-    alert("test1");
+    //$("#grade1").val('test1');
+    alert("test2");
     </script>   
 
         <!-- Begin GPA Calc -->
