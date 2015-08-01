@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <!--NOTE: I USED I CSS TEMPLATE TO MAKE MY WEBSITE ALL CREDIT FOR CSS AND JAVASCRIPT GOES TO: http://www.templatemo.com -->
 <!--However, all PHP coding and html has been done by me -->
-<?php
-error_reporting(0);
-?>
 <html>
   <head>
     <title>NPCA GPA Calculator | Krishnan Rajiyah</title>
@@ -114,157 +111,22 @@ ddsmoothmenu.init({
         <div class="clear"></div>                   
             <div class="clear"></div>
            <br />            
-<div align="center">
-        <!-- Begin PHP for calc-->
+<div align="center">   
 
-        <?php 
-$grade1 = (float)$_GET['grade1'];
-$grade2 = (float)$_GET['grade2'];
-$grade3 = (float)$_GET['grade3'];
-$grade4 = (float)$_GET['grade4'];
-$grade5 = (float)$_GET['grade5'];
-$grade6 = (float)$_GET['grade6'];
-$grade7 = (float)$_GET['grade7'];
-$grade8 = (float)$_GET['grade8'];
-$grade9 = (float)$_GET['grade9'];
-$grade10 = (float)$_GET['grade10'];
-$grade11 = (float)$_GET['grade11'];
-$grade12 = (float)$_GET['grade12'];
-$grade13 = (float)$_GET['grade13'];
-$grade14 = (float)$_GET['grade14'];
-$grade15 = (float)$_GET['grade15'];
-$credit1 = (float)$_GET['credit1'];
-$credit2 = (float)$_GET['credit2'];
-$credit3 = (float)$_GET['credit3'];
-$credit4 = (float)$_GET['credit4'];
-$credit5 = (float)$_GET['credit5'];
-$credit6 = (float)$_GET['credit6'];
-$credit7 = (float)$_GET['credit7'];
-$credit8 = (float)$_GET['credit8'];
-$credit9 = (float)$_GET['credit9'];
-$credit10 = (float)$_GET['credit10'];
-$credit11 = (float)$_GET['credit11'];
-$credit12 = (float)$_GET['credit12'];
-$credit13 = (float)$_GET['credit13'];
-$credit14 = (float)$_GET['credit14'];
-$credit15 = (float)$_GET['credit15'];
-$level1 = $_GET['level1'];
-$level2 = $_GET['level2'];
-$level3 = $_GET['level3'];
-$level4 = $_GET['level4'];
-$level5 = $_GET['level5'];
-$level6 = $_GET['level6'];
-$level7 = $_GET['level7'];
-$level8 = $_GET['level8'];
-$level9 = $_GET['level9'];
-$level10 = $_GET['level10'];
-$level11 = $_GET['level11'];
-$level12 = $_GET['level12'];
-$level13 = $_GET['level13'];
-$level14 = $_GET['level14'];
-$level15 = $_GET['level15'];
-$gpa1 = (float)0; $gpa2 = (float)0;
-$gpa3 = (float)0; $gpa4 = (float)0;
-$gpa5 = (float)0; $gpa6 = (float)0;
-$gpa7 = (float)0; $gpa8 = (float)0;
-$gpa9 = (float)0; $gpa10 = (float)0;
-$gpa11 = (float)0; $gpa12 = (float)0;
-$gpa13 = (float)0; $gpa14 = (float)0;
-$gpa15 = (float)0;
-function getGpa($level, $grade, $credit)
-{
-    $grade = (float)$grade;
-    $credit = (float)$credit;
-    $gpa = (float) 0.0;
-    if($level == "H" || $level == "h" || $level == "honors" || $level == "Honors")
-{
-    if($grade >= 97)
-    {
-        $gpa = 4.5*$credit;
-    }
-    else if ($grade >= 93 && $grade <= 96)
-    {
-        $gpa = 4.0 * $credit;
-    }
-    else if ($grade >= 89 && $grade <= 92)
-    {
-        $gpa = 3.5 * $credit;
-    }
-    else if ($grade >= 85 && $grade <= 88)
-    {
-        $gpa = 3.0 * $credit;
-    }
-    else if ($grade >= 76 && $grade <= 84)
-    {
-        $gpa = 2.5 * $credit;
-    }
-    else if ($grade >= 70 && $grade <= 75)
-    {
-        $gpa = 2.0 * $credit;
-    }
-    else if ($grade >= 0 && $grade <= 69)
-    {
-        $gpa = 0 * $credit;
-    } 
-}
-else if ($level == "AP" || $level == "ap" || $level == "Ap" || $level == "aP" || $level == "Advanced Placement" || $level == "advanced placement" || 
-$level == "Advanced placement")
-        {
-            if ($grade >= 97)
-            {
-                $gpa = 5.5 * $credit;
-            }
-            else if ($grade >= 93 && $grade <= 96)
-            {
-                $gpa = 5.0 * $credit;
-            }
-            else if ($grade >= 89 && $grade <= 92)
-            {
-                $gpa = 4.5 * $credit;
-            }
-            else if ($grade >= 85 && $grade <= 88)
-            {
-                $gpa = 4.0 * $credit;
-            }
-            else if ($grade >= 76 && $grade <= 84)
-            {
-                $gpa = 3.5 * $credit;
-            }
-            else if ($grade >= 70 && $grade <= 75)
-            {
-                $gpa = 3.0 * $credit;
-            }
-            else if ($grade >= 0 && $grade <= 69)
-            {
-                $gpa = 0 * $credit;
-            }            
-        } 
-    return (float) $gpa;
-}  
-$gpa1 = (float)getGpa($level1, $grade1, $credit1); 
-$gpa2 = (float)getGpa($level2, $grade2, $credit2);
-$gpa3 = (float)getGpa($level3, $grade3, $credit3);
-$gpa4 = (float)getGpa($level4, $grade4, $credit4);
-$gpa5 = (float)getGpa($level5, $grade5, $credit5);
-$gpa6 = (float)getGpa($level6, $grade6, $credit6);
-$gpa7 = (float)getGpa($level7, $grade7, $credit7);
-$gpa8 = (float)getGpa($level8, $grade8, $credit8);  
-$gpa9 = (float)getGpa($level9, $grade9, $credit9); 
-$gpa10 = (float)getGpa($level10, $grade10, $credit10); 
-$gpa11 = (float)getGpa($level11, $grade11, $credit11); 
-$gpa12 = (float)getGpa($level12, $grade12, $credit12); 
-$gpa13 = (float)getGpa($level13, $grade13, $credit13); 
-$gpa14 = (float)getGpa($level14, $grade14, $credit14); 
-$gpa15 = (float)getGpa($level15, $grade15, $credit15); 
-$gpa_sum = (float)($gpa1+$gpa2+$gpa3+$gpa4+$gpa5+$gpa6+$gpa7+$gpa8+$gpa9+$gpa10+$gpa11+$gpa12+$gpa13+$gpa14+$gpa15);
-$credit_sum = (float)($credit1+$credit2+$credit3+$credit4+$credit5+$credit6+$credit7+$credit8+$credit9+$credit10+$credit11+$credit12+$credit13+$credit14+$credit15);
-$final_gpa = (float)((float)($gpa_sum)/(float)($credit_sum)); 
-?>
-        <!-- End PHP for calc--> 
-        
+    <script>
+    $.ajax({
+        url: "http://krajiyah.net63.net/PHP/gpacalc.php",
+        type: "GET",                          
+        data: "",
+        success: function(data) {
+            alert("yes!");
+        },
+    }); 
+    $("#grade1").val()
+    </script>   
 
         <!-- Begin GPA Calc -->
-        <form action="index.php" method="get" enctype="multipart/form-data" id="calcForm">   
+        <form action="http://krajiyah.net63.net/PHP/gpacalc.php" method="get" enctype="multipart/form-data" id="calcForm">   
     
     
     <table id="background-image" summary="Meeting Results">
