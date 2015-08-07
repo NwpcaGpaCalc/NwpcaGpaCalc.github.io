@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--NOTE: I USED I CSS TEMPLATE TO MAKE MY WEBSITE ALL CREDIT FOR CSS AND JAVASCRIPT GOES TO: http://www.templatemo.com -->
-<!--However, all PHP coding and html has been done by me -->
+<!--However, all js coding and html has been done by me -->
 <html>
   <head>
     <title>NPCA GPA Calculator | Krishnan Rajiyah</title>
@@ -114,16 +114,141 @@ ddsmoothmenu.init({
 <div align="center">   
 
     <script>
+    function getGpa(level, grade, credit) {
+        var gpa = 0.0;
+        if(level == "H" || level == "h" || level == "honors" || level == "Honors")
+        {
+            if(grade >= 97)
+            {
+                gpa = 4.5*credit;
+            }
+            else if (grade >= 93 && grade <= 96)
+            {
+                gpa = 4.0 * credit;
+            }
+            else if (grade >= 89 && grade <= 92)
+            {
+                gpa = 3.5 * credit;
+            }
+            else if (grade >= 85 && grade <= 88)
+            {
+                gpa = 3.0 * credit;
+            }
+            else if (grade >= 76 && grade <= 84)
+            
+                gpa = 2.5 * credit;
+            }
+            else if (grade >= 70 && grade <= 75)
+            {
+                gpa = 2.0 * credit;
+            }
+            else if (grade >= 0 && grade <= 69)
+            {
+                gpa = 0 * credit;
+            } 
+        }
+        else if (level == "AP" || level == "ap" || level == "Ap" || level == "aP" || level == "Advanced Placement" || level == "advanced placement" || level == "Advanced placement")
+        {
+            if (grade >= 97)
+            {
+                gpa = 5.5 * credit;
+            }
+            else if (grade >= 93 && grade <= 96)
+            {
+                gpa = 5.0 * credit;
+            }
+            else if (grade >= 89 && grade <= 92)
+            {
+                gpa = 4.5 * credit;
+            }
+            else if (grade >= 85 && grade <= 88)
+            {
+                gpa = 4.0 * credit;
+            }
+            else if (grade >= 76 && grade <= 84)
+            {
+                gpa = 3.5 * credit;
+            }
+            else if (grade >= 70 && grade <= 75)
+            {
+                gpa = 3.0 * credit;
+            }
+            else if (grade >= 0 && grade <= 69)
+            {
+                gpa = 0 * credit;
+            }            
+        } 
+        return gpa;
+    } 
+    
     function calc() {
-        $.ajax({
-            url: "http://showcase.no-ip.org/PHP/gpacalc.php",
-            type: "GET",                          
-            data: "grade1="+$("#grade1").val()+"&grade2="+$("#grade2").val()+"&grade3="+$("#grade3").val()+"&grade4="+$("#grade4").val()+"&grade5="+$("#grade5").val()+"&grade6="+$("#grade6").val()+"&grade7="+$("#grade7").val()+"&grade8="+$("#grade8").val()+"&grade9="+$("#grade9").val()+"&grade10="+$("#grade10").val()+"&grade11="+$("#grade11").val()+"&grade12="+$("#grade12").val()+"&grade13="+$("#grade13").val()+"&grade14="+$("#grade14").val()+"&grade15="+$("#grade15").val()+"&level1="+$("#level1").val()+"&level2="+$("#level2").val()+"&level3="+$("#level3").val()+"&level4="+$("#level4").val()+"&level5="+$("#level5").val()+"&level6="+$("#level6").val()+"&level7="+$("#level7").val()+"&level8="+$("#level8").val()+"&level9="+$("#level9").val()+"&level10="+$("#level10").val()+"&level11="+$("#level11").val()+"&level12="+$("#level12").val()+"&level13="+$("#level13").val()+"&level14="+$("#level14").val()+"&level15="+$("#level15").val()+"&credit1="+$("#credit1").val()+"&credit2="+$("#credit2").val()+"&credit3="+$("#credit3").val()+"&credit4="+$("#credit4").val()+"&credit5="+$("#credit5").val()+"&credit6="+$("#credit6").val()+"&credit7="+$("#credit7").val()+"&credit="+$("#credit8").val()+"&credit9="+$("#credit9").val()+"&credit10="+$("#credit10").val()+"&credit11="+$("#credit11").val()+"&credit12="+$("#credit12").val()+"&credit13="+$("#credit13").val()+"&credit14="+$("#credit14").val()+"&credit15="+$("#credit15").val(),
-            success: function(data) {
-                $("#gpaResultResult").html(data);
-            },
-        });
-    }
+        var grade1 = parseFloat($("#grade1").val());
+        var grade2 = parseFloat($("#grade2").val());
+        var grade3 = parseFloat($("#grade3").val());
+        var grade4 = parseFloat($("#grade4").val());
+        var grade5 = parseFloat($("#grade5").val());
+        var grade6 = parseFloat($("#grade6").val());
+        var grade7 = parseFloat($("#grade7").val());
+        var grade8 = parseFloat($("#grade8").val());
+        var grade9 = parseFloat($("#grade9").val());
+        var grade10 = parseFloat($("#grade10").val());
+        var grade11 = parseFloat($("#grade11").val());
+        var grade12 = parseFloat($("#grade12").val());
+        var grade13 = parseFloat($("#grade13").val());
+        var grade14 = parseFloat($("#grade14").val());
+        var grade15 = parseFloat($("#grade15").val());
+        var credit1 = parseFloat($("#credit1").val());
+        var credit2 = parseFloat($("#credit2").val());
+        var credit3 = parseFloat($("#credit3").val());
+        var credit4 = parseFloat($("#credit4").val());
+        var credit5 = parseFloat($("#credit5").val());
+        var credit6 = parseFloat($("#credit6").val());
+        var credit7 = parseFloat($("#credit7").val());
+        var credit8 = parseFloat($("#credit8").val());
+        var credit9 = parseFloat($("#credit9").val());
+        var credit10 = parseFloat($("#credit10").val());
+        var credit11 = parseFloat($("#credit11").val());
+        var credit12 = parseFloat($("#credit12").val());
+        var credit13 = parseFloat($("#credit13").val());
+        var credit14 = parseFloat($("#credit14").val());
+        var credit15 = parseFloat($("#credit15").val());
+        var level1 = $("#level1").val().strip();
+        var level2 = $("#level2").val().strip();
+        var level3 = $("#level3").val().strip();
+        var level4 = $("#level4").val().strip();
+        var level5 = $("#level5").val().strip();
+        var level6 = $("#level6").val().strip();
+        var level7 = $("#level7").val().strip();
+        var level8 = $("#level8").val().strip();
+        var level9 = $("#level9").val().strip();
+        var level10 = $("#level10").val().strip();
+        var level11 = $("#level11").val().strip();
+        var level12 = $("#level12").val().strip();
+        var level13 = $("#level13").val().strip();
+        var level14 = $("#level14").val().strip();
+        var level15 = $("#level15").val().strip();
+        var gpa1 = getGpa(level1, grade1, credit1); 
+        var gpa2 = getGpa(level2, grade2, credit2); 
+        var gpa3 = getGpa(level3, grade3, credit3); 
+        var gpa4 = getGpa(level4, grade4, credit4); 
+        var gpa5 = getGpa(level5, grade5, credit5); 
+        var gpa6 = getGpa(level6, grade6, credit6); 
+        var gpa7 = getGpa(level7, grade7, credit7); 
+        var gpa8 = getGpa(level8, grade8, credit8); 
+        var gpa9 = getGpa(level9, grade9, credit9); 
+        var gpa10 = getGpa(level10, grade10, credit10); 
+        var gpa11 = getGpa(level11, grade11, credit11); 
+        var gpa12 = getGpa(level12, grade12, credit12); 
+        var gpa13 = getGpa(level13, grade13, credit13); 
+        var gpa14 = getGpa(level14, grade14, credit14); 
+        var gpa15 = getGpa(level15, grade15, credit15); 
+        
+        gpa_sum = gpa1+gpa2+gpa3+gpa4+gpa5+gpa6+gpa7+gpa8+gpa9+gpa10+gpa11+gpa12+gpa13+gpa14+gpa15;
+        credit_sum = credit1+credit2+credit3+credit4+credit5+credit6+credit7+credit8+credit9+credit10+credit11+credit12+credit13+credit14+credit15;
+        final_gpa = gpa_sum / credit_sum; 
+
+        $("#gpaResultResult").html(final_gpa);
+    } 
     </script>   
 
         <!-- Begin GPA Calc -->
