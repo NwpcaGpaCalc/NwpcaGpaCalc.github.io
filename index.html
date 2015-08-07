@@ -320,7 +320,7 @@ function resetForm() {
         var level13 = $("#level13").val().trim();
         var level14 = $("#level14").val().trim();
         var level15 = $("#level15").val().trim();
-        var gpa1 = getGpa(level1, grade1, credit1); 
+        var gpa1 = getGpa(level1, grade1, credit1); alert(gpa1);
         var gpa2 = getGpa(level2, grade2, credit2); 
         var gpa3 = getGpa(level3, grade3, credit3); 
         var gpa4 = getGpa(level4, grade4, credit4); 
@@ -340,7 +340,7 @@ function resetForm() {
         var credit_sum = credit1+credit2+credit3+credit4+credit5+credit6+credit7+credit8+credit9+credit10+credit11+credit12+credit13+credit14+credit15;
         var final_gpa = gpa_sum / credit_sum; 
 
-        $("#gpaResultResult").html(final_gpa);
+        $("#gpaResultResult").html("" + final_gpa);
     } 
 
 </script>
