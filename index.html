@@ -275,71 +275,37 @@ function resetForm() {
     } 
     
     function calc() {
-        var grade1 = parseFloat($("#grade1").val());
-        var grade2 = parseFloat($("#grade2").val());
-        var grade3 = parseFloat($("#grade3").val());
-        var grade4 = parseFloat($("#grade4").val());
-        var grade5 = parseFloat($("#grade5").val());
-        var grade6 = parseFloat($("#grade6").val());
-        var grade7 = parseFloat($("#grade7").val());
-        var grade8 = parseFloat($("#grade8").val());
-        var grade9 = parseFloat($("#grade9").val());
-        var grade10 = parseFloat($("#grade10").val());
-        var grade11 = parseFloat($("#grade11").val());
-        var grade12 = parseFloat($("#grade12").val());
-        var grade13 = parseFloat($("#grade13").val());
-        var grade14 = parseFloat($("#grade14").val());
-        var grade15 = parseFloat($("#grade15").val());
-        var credit1 = parseFloat($("#credit1").val());
-        var credit2 = parseFloat($("#credit2").val());
-        var credit3 = parseFloat($("#credit3").val());
-        var credit4 = parseFloat($("#credit4").val());
-        var credit5 = parseFloat($("#credit5").val());
-        var credit6 = parseFloat($("#credit6").val());
-        var credit7 = parseFloat($("#credit7").val());
-        var credit8 = parseFloat($("#credit8").val());
-        var credit9 = parseFloat($("#credit9").val());
-        var credit10 = parseFloat($("#credit10").val());
-        var credit11 = parseFloat($("#credit11").val());
-        var credit12 = parseFloat($("#credit12").val());
-        var credit13 = parseFloat($("#credit13").val());
-        var credit14 = parseFloat($("#credit14").val());
-        var credit15 = parseFloat($("#credit15").val());
-        var level1 = $("#level1").val().trim();
-        var level2 = $("#level2").val().trim();
-        var level3 = $("#level3").val().trim();
-        var level4 = $("#level4").val().trim();
-        var level5 = $("#level5").val().trim();
-        var level6 = $("#level6").val().trim();
-        var level7 = $("#level7").val().trim();
-        var level8 = $("#level8").val().trim();
-        var level9 = $("#level9").val().trim();
-        var level10 = $("#level10").val().trim();
-        var level11 = $("#level11").val().trim();
-        var level12 = $("#level12").val().trim();
-        var level13 = $("#level13").val().trim();
-        var level14 = $("#level14").val().trim();
-        var level15 = $("#level15").val().trim();
-        var gpa1 = getGpa(level1, grade1, credit1);
-        var gpa2 = getGpa(level2, grade2, credit2); 
-        var gpa3 = getGpa(level3, grade3, credit3); 
-        var gpa4 = getGpa(level4, grade4, credit4); 
-        var gpa5 = getGpa(level5, grade5, credit5); 
-        var gpa6 = getGpa(level6, grade6, credit6); 
-        var gpa7 = getGpa(level7, grade7, credit7); 
-        var gpa8 = getGpa(level8, grade8, credit8); 
-        var gpa9 = getGpa(level9, grade9, credit9); 
-        var gpa10 = getGpa(level10, grade10, credit10); 
-        var gpa11 = getGpa(level11, grade11, credit11); 
-        var gpa12 = getGpa(level12, grade12, credit12); 
-        var gpa13 = getGpa(level13, grade13, credit13); 
-        var gpa14 = getGpa(level14, grade14, credit14); 
-        var gpa15 = getGpa(level15, grade15, credit15); 
+        var grades = [];
+        for (var i = 1; i <= 15; i++) {
+            var strVal = $("#grade"+i).val();
+            if (strVal != "") {
+                grades[i] = parseFloat(strVal);
+            }
+        };
+        var credits = [];
+        for (var i = 1; i <= 15; i++) {
+            var strVal = $("#credit"+i).val();
+            if (strVal != "") {
+                credits[i] = parseFloat(strVal);
+            }
+        };
+        var levels = [];
+        for (var i = 1; i <= 15; i++) {
+            var strVal = $("#level"+i).val().trim();
+            if (strVal != "") {
+                levels[i] = strVal;
+            }
+        };
+        var gpa_sum = 0.0;
+        for (var i = 1; i <= 15; i++) {
+            gpa_sum += getGpa(levels[i], grades[i], credits[i]);
+        };
+        var credit_sum = 0.0;
+        for (var i = 1; i <= 15; i++) {
+            credit_sum += credits[i];
+        };
         
-        var gpa_sum = gpa1+gpa2+gpa3+gpa4+gpa5+gpa6+gpa7+gpa8+gpa9+gpa10+gpa11+gpa12+gpa13+gpa14+gpa15;
-        var credit_sum = credit1+credit2+credit3+credit4+credit5+credit6+credit7+credit8+credit9+credit10+credit11+credit12+credit13+credit14+credit15; alert(credit2);
         var final_gpa = gpa_sum / credit_sum;
-
         $("#gpaResultResult").html("" + final_gpa);
     } 
 
