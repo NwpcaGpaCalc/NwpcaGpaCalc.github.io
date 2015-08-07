@@ -305,12 +305,6 @@ function resetForm() {
             credit_sum += credits[i];
         };
 
-        console.log(grades);
-        console.log(credits);
-        console.log(levels);
-        console.log(gpa_sum);
-        console.log(credit_sum);
-
         var final_gpa = gpa_sum / credit_sum;
         $("#gpaResultResult").html("" + final_gpa);
     } 
