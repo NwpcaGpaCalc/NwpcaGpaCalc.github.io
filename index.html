@@ -276,32 +276,32 @@ function resetForm() {
     
     function calc() {
         var grades = [];
-        for (var i = 1; i <= 15; i++) {
-            var strVal = $("#grade"+i).val();
+        for (var i = 0; i < 15; i++) {
+            var strVal = $("#grade"+(i+1)).val();
             if (strVal != "") {
                 grades[i] = parseFloat(strVal);
             }
         };
         var credits = [];
-        for (var i = 1; i <= 15; i++) {
-            var strVal = $("#credit"+i).val();
+        for (var i = 0; i < 15; i++) {
+            var strVal = $("#credit"+(i+1)).val();
             if (strVal != "") {
                 credits[i] = parseFloat(strVal);
             }
         };
         var levels = [];
-        for (var i = 1; i <= 15; i++) {
-            var strVal = $("#level"+i).val().trim();
+        for (var i = 0; i < 15; i++) {
+            var strVal = $("#level"+(i+1)).val().trim();
             if (strVal != "") {
                 levels[i] = strVal;
             }
         };
         var gpa_sum = 0.0;
-        for (var i = 1; i <= 15; i++) {
+        for (var i = 0; i < grades.length; i++) {
             gpa_sum += getGpa(levels[i], grades[i], credits[i]);
         };
         var credit_sum = 0.0;
-        for (var i = 1; i <= 15; i++) {
+        for (var i = 0; i < credits.length; i++) {
             credit_sum += credits[i];
         };
 
